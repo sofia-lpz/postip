@@ -21,6 +21,7 @@ if [ "$current_ip_address" != "$stored_ip_address" ]; then
     current_date=$(date +"%Y-%m-%d %H:%M:%S")
     echo "$current_ip_address" > "$ip_txt_path"
 
+    git pull
     git add "$ip_txt_path"
     git commit -m "Update IP address on $current_date"
     git push origin main
